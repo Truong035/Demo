@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\GMT\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\GMT\\.nuget\\packages"
+    ]
+  }
+}

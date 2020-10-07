@@ -1,0 +1,13 @@
+C:\Users\GMT\source\repos\BaiTapNhom\BaiTapNhom\bin\Debug\netcoreapp3.1\BaiTapNhom.exe
+C:\Users\GMT\source\repos\BaiTapNhom\BaiTapNhom\bin\Debug\netcoreapp3.1\BaiTapNhom.deps.json
+C:\Users\GMT\source\repos\BaiTapNhom\BaiTapNhom\bin\Debug\netcoreapp3.1\BaiTapNhom.runtimeconfig.json
+C:\Users\GMT\source\repos\BaiTapNhom\BaiTapNhom\bin\Debug\netcoreapp3.1\BaiTapNhom.runtimeconfig.dev.json
+C:\Users\GMT\source\repos\BaiTapNhom\BaiTapNhom\bin\Debug\netcoreapp3.1\BaiTapNhom.dll
+C:\Users\GMT\source\repos\BaiTapNhom\BaiTapNhom\bin\Debug\netcoreapp3.1\BaiTapNhom.pdb
+C:\Users\GMT\source\repos\BaiTapNhom\BaiTapNhom\obj\Debug\netcoreapp3.1\BaiTapNhom.csprojAssemblyReference.cache
+C:\Users\GMT\source\repos\BaiTapNhom\BaiTapNhom\obj\Debug\netcoreapp3.1\BaiTapNhom.AssemblyInfoInputs.cache
+C:\Users\GMT\source\repos\BaiTapNhom\BaiTapNhom\obj\Debug\netcoreapp3.1\BaiTapNhom.AssemblyInfo.cs
+C:\Users\GMT\source\repos\BaiTapNhom\BaiTapNhom\obj\Debug\netcoreapp3.1\BaiTapNhom.csproj.CoreCompileInputs.cache
+C:\Users\GMT\source\repos\BaiTapNhom\BaiTapNhom\obj\Debug\netcoreapp3.1\BaiTapNhom.dll
+C:\Users\GMT\source\repos\BaiTapNhom\BaiTapNhom\obj\Debug\netcoreapp3.1\BaiTapNhom.pdb
+C:\Users\GMT\source\repos\BaiTapNhom\BaiTapNhom\obj\Debug\netcoreapp3.1\BaiTapNhom.genruntimeconfig.cache
