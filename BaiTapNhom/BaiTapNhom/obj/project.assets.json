@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GMT\\source\\repos\\BaiTapNhom\\BaiTapNhom\\BaiTapNhom.csproj",
+      "projectUniqueName": "C:\\Users\\GMT\\Desktop\\Demo\\BaiTapNhom\\BaiTapNhom\\BaiTapNhom.csproj",
       "projectName": "BaiTapNhom",
-      "projectPath": "C:\\Users\\GMT\\source\\repos\\BaiTapNhom\\BaiTapNhom\\BaiTapNhom.csproj",
+      "projectPath": "C:\\Users\\GMT\\Desktop\\Demo\\BaiTapNhom\\BaiTapNhom\\BaiTapNhom.csproj",
       "packagesPath": "C:\\Users\\GMT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\GMT\\source\\repos\\BaiTapNhom\\BaiTapNhom\\obj\\",
+      "outputPath": "C:\\Users\\GMT\\Desktop\\Demo\\BaiTapNhom\\BaiTapNhom\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\GMT\\AppData\\Roaming\\NuGet\\NuGet.Config",

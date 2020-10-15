@@ -1,90 +1,87 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Globalization;
-using System.Text.RegularExpressions;
-using System.Xml.Serialization;
+using System.Text;
 
 namespace BaiTapNhom
 {
-    class Program
+    class TinhNhanh
     {
         static List<string> So1 = new List<string>();
-        static  int Min = default;
-        static int  Solan =1;
-        static int BieuThuc(string PhepTinh,int Max)
+        static int Min = default;
+        static int Solan = 1;
+        static int BieuThuc(string PhepTinh, int Max)
         {
             int sum = 0;
             if (PhepTinh.Equals("/") || PhepTinh.Equals("*"))
+            {
+                XoaChuoiRong();
+                for (int i = Min; i < Max; i++)
                 {
-                   XoaChuoiRong();
-                    for (int i = Min; i < Max; i++)
+                    try
                     {
-                        try
+                        if (So1[i].Equals("/"))
                         {
-                            if (So1[i].Equals("/"))
-                            {
-                                int a = Convert.ToInt16(So1[i - 1]);
-                                int b = Convert.ToInt16(So1[i + 1]);
-                                sum = (a / b);
-                                So1[i - 1] = "" + sum;
-                                So1.RemoveAt(i + 1);
-                                So1.RemoveAt(i);
-                                Max -= 2;
-                                XuatKetQua();
-                                i = Min;
-                            }
-                            else if (So1[i].Equals("*"))
-                            {
-                                int a = Convert.ToInt16(So1[i - 1]);
-                                int b = Convert.ToInt16(So1[i + 1]);
-                                sum = (a * b);
-                                So1[i - 1] = "" + sum;
-                                So1.RemoveAt(i + 1); 
-                                So1.RemoveAt(i);
-                                Max -= 2;
-                                XuatKetQua();
-                                i = Min;
-                            }
+                            int a = Convert.ToInt16(So1[i - 1]);
+                            int b = Convert.ToInt16(So1[i + 1]);
+                            sum = (a / b);
+                            So1[i - 1] = "" + sum;
+                            So1.RemoveAt(i + 1);
+                            So1.RemoveAt(i);
+                            Max -= 2;
+                            XuatKetQua();
+                            i = Min;
                         }
-                        catch { }
+                        else if (So1[i].Equals("*"))
+                        {
+                            int a = Convert.ToInt16(So1[i - 1]);
+                            int b = Convert.ToInt16(So1[i + 1]);
+                            sum = (a * b);
+                            So1[i - 1] = "" + sum;
+                            So1.RemoveAt(i + 1);
+                            So1.RemoveAt(i);
+                            Max -= 2;
+                            XuatKetQua();
+                            i = Min;
+                        }
                     }
+                    catch { }
                 }
-                if (PhepTinh.Equals("+") || PhepTinh.Equals("-"))
+            }
+            if (PhepTinh.Equals("+") || PhepTinh.Equals("-"))
+            {
+                XoaChuoiRong();
+                for (int i = Min; i < Max; i++)
                 {
-                    XoaChuoiRong();
-                    for (int i = Min; i < Max; i++)
+                    try
                     {
-                        try
+                        if (So1[i].Equals("+"))
                         {
-                            if (So1[i].Equals("+"))
-                            {
-                                int a = Convert.ToInt16(So1[i - 1]);
-                                int b = Convert.ToInt16(So1[i + 1]);
-                                sum = (a + b);
-                                So1[i - 1] = "" + sum;
-                                So1.RemoveAt(i + 1);
-                                So1.RemoveAt(i);
-                                i = Min;
-                                XuatKetQua();
-                            }
-                            else if (So1[i].Equals("-"))
-                            {
-                                int a = Convert.ToInt16(So1[i - 1]);
-                                int b = Convert.ToInt16(So1[i + 1]);
-                                sum = (a - b);
-                                So1[i - 1] = "" + sum;
-                                So1.RemoveAt(i + 1);
-                                So1.RemoveAt(i);
-                                Max -= 2;
-                                i =Min;
-                                XuatKetQua();
-                            }
+                            int a = Convert.ToInt16(So1[i - 1]);
+                            int b = Convert.ToInt16(So1[i + 1]);
+                            sum = (a + b);
+                            So1[i - 1] = "" + sum;
+                            So1.RemoveAt(i + 1);
+                            So1.RemoveAt(i);
+                            i = Min;
+                            XuatKetQua();
                         }
-                        catch { }
+                        else if (So1[i].Equals("-"))
+                        {
+                            int a = Convert.ToInt16(So1[i - 1]);
+                            int b = Convert.ToInt16(So1[i + 1]);
+                            sum = (a - b);
+                            So1[i - 1] = "" + sum;
+                            So1.RemoveAt(i + 1);
+                            So1.RemoveAt(i);
+                            Max -= 2;
+                            i = Min;
+                            XuatKetQua();
+                        }
                     }
+                    catch { }
                 }
-            
+            }
+
             return Max;
         }
 
@@ -120,13 +117,13 @@ namespace BaiTapNhom
                     So1.Add(So[i]);//luu +-*/
                     Chuoi += So[i];//luu do u tien cac dau ()+-*/
                     Chuoi1 = "";
-                        if (So[i + 1].Equals("-"))
-                        {
-                            Chuoi1 += So[i + 1];
-                            i++;
-                        }
+                    if (So[i + 1].Equals("-"))
+                    {
+                        Chuoi1 += So[i + 1];
+                        i++;
+                    }
                 }
-                else if (So[i].Equals("(") ||So[i].Equals(")"))
+                else if (So[i].Equals("(") || So[i].Equals(")"))
                 {
                     So1.Add(Chuoi1);//luu so 
                     So1.Add(So[i]);//luu ()
@@ -161,13 +158,14 @@ namespace BaiTapNhom
                 if (So1[i].Equals("("))
                 {
                     Min = i;
+  
                     TinHeBieuThuc(Chuoi,Max(i));
                 }
             }
             // xoa het cac dau () da tinh xong
             for (int i = 0; i < So1.Count; i++)
             {
-                if (So1[i].Equals("(")||So1[i].Equals(")"))
+                if (So1[i].Equals("(") || So1[i].Equals(")"))
                 {
                     So1.RemoveAt(i);
                     XoaChuoiRong();
@@ -176,7 +174,7 @@ namespace BaiTapNhom
             }
             // tinh trong khoac xong r thi gan min lai ban ko
             Min = 0;
-            TinHeBieuThuc(Chuoi,So1.Count);
+            TinHeBieuThuc(Chuoi, So1.Count);
             if (So1.Count > 1)
             {
                 Console.WriteLine("Khong the tinh bieu thuc nay vui long kiem tra lai ");
@@ -184,44 +182,45 @@ namespace BaiTapNhom
             Console.ReadKey();
         }
 
-     //coi do uu tien cua */+- ()
+        //coi do uu tien cua */+- ()
         private static void TinHeBieuThuc(string Chuoi, int Max)
         {
             for (int i = 0; i < Chuoi.Length; i++)
             {
-                if (Chuoi.Substring(i,1).Equals("/"))
+                if (Chuoi.Substring(i, 1).Equals("/"))
                 {
-                        Max = BieuThuc("/", Max);
+                    Max = BieuThuc("/", Max);
 
                 }
-                if (Chuoi.Substring(i,1).Equals("*"))
-                { 
-                        Max = BieuThuc("*", Max);   
+                if (Chuoi.Substring(i, 1).Equals("*"))
+                {
+                    Max = BieuThuc("*", Max);
                 }
             }
             for (int i = 0; i < Chuoi.Length; i++)
             {
                 if (Chuoi.Substring(i, 1).Equals("-"))
                 {
-                    Max = BieuThuc("-",  Max);
+                    Max = BieuThuc("-", Max);
                 }
                 else if (Chuoi.Substring(i, 1).Equals("+"))
                 {
-                        Max = BieuThuc("+",Max);  
+                    Max = BieuThuc("+", Max);
                 }
             }
         }
         //Lay ra vi tri ket thuc )
         private static int Max(int min)
         {
-            for (int i = min +1; i < So1.Count; i++)
+            for (int i = min + 1; i < So1.Count; i++)
             {
                 // tim kiem xem trong ( con ton tai ( nưa hay ko 
                 if (So1[i].Equals(")"))
                 {
                     return i;// tra ve max 
                 }
-                if (So1[i].Equals("(")){
+                if (So1[i].Equals("("))
+                {
                     Min = i;// GAN Min = i
                     Max(Min); //Tiep tuc tim max
                 }

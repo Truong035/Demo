@@ -5,4 +5,19 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Program.cs" />
+    <Compile Remove="TinhNhanh.cs" />
+    <Compile Remove="TinhNhanhb.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="TinhNhanh.cs" />
+    <None Include="TinhNhanhb.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Program.cs" />
+  </ItemGroup>
+
 </Project>
